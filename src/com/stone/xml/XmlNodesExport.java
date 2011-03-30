@@ -38,7 +38,7 @@ public class XmlNodesExport {
 		Iterator<String> it = export.getResult().iterator();
 		while(it.hasNext()){
 			String nodeName = it.next();
-			System.out.println(nodeName + ":" );
+//			System.out.println(nodeName + ":" );
 		}
 	}
 	
@@ -71,9 +71,16 @@ public class XmlNodesExport {
 				
 				if(childNodes.item(j).getNodeType()==Node.ELEMENT_NODE){
 					queue.add(new MyNode(nodeName + "." + childNodes.item(j).getNodeName(), (Element)childNodes.item(j)));
-				}else if(childNodes.item(j).getNodeType()==Node.TEXT_NODE && childNodes.item(j).getNodeValue() != null){
+//				}else if(childNodes.item(j).getNodeType()==Node.TEXT_NODE && childNodes.item(j).getNodeValue() != null){
+				}else if(childNodes.item(j).getNodeType()==Node.TEXT_NODE ){
 					result.add(nodeName);
-					System.out.println("nodeName:" + nodeName + ", value=" + childNodes.item(j).getNodeValue());
+//					System.out.println("nodeName:" + nodeName + ", value=" + childNodes.item(j).getNodeValue());
+                    // DEBUG PRINTS
+					Node node = childNodes.item(j);
+					System.out.println("nodeName:" + node.getNodeName());
+                    System.out.println("nodeType:" + node.getNodeType());
+                    System.out.println("nodeValue:" + node.getNodeValue());
+                    System.out.println("getTextContent:" + node.getTextContent());
 				}
 			}
 		}
