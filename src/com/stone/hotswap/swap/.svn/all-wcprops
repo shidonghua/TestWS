@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/55/MyTestPrj/src/com/stone/hotswap/swap
+END
+Foo.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/55/MyTestPrj/src/com/stone/hotswap/swap/Foo.java
+END
+Foo2.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/55/MyTestPrj/src/com/stone/hotswap/swap/Foo2.java
+END
+IFoo.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/55/MyTestPrj/src/com/stone/hotswap/swap/IFoo.java
+END

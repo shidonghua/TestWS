@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/61/MyTestPrj/src/com/stone/classloader
+END
+ClassToBeRemoved.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/60/MyTestPrj/src/com/stone/classloader/ClassToBeRemoved.java
+END
+TestClassNotFoundException.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/61/MyTestPrj/src/com/stone/classloader/TestClassNotFoundException.java
+END
+TestNoClassDefFoundError.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/60/MyTestPrj/src/com/stone/classloader/TestNoClassDefFoundError.java
+END
+ClassLoaderTree.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/59/MyTestPrj/src/com/stone/classloader/ClassLoaderTree.java
+END
