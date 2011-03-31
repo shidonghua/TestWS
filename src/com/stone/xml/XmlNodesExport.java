@@ -19,8 +19,9 @@ import org.xml.sax.SAXException;
 
 public class XmlNodesExport {
 
-	private List<String>	result;
-	private Queue<MyNode> queue;
+	private List<String>	result;  //store the result leaf node list which value is not null
+
+	private Queue<MyNode> queue;  //temporary queue for storing non-leaf node
 	/**
 	 * @param args
 	 * @throws ParserConfigurationException 
@@ -38,7 +39,7 @@ public class XmlNodesExport {
 		Iterator<String> it = export.getResult().iterator();
 		while(it.hasNext()){
 			String nodeName = it.next();
-//			System.out.println(nodeName + ":" );
+			System.out.println(nodeName);
 		}
 	}
 	
@@ -49,8 +50,7 @@ public class XmlNodesExport {
 		Document document = builder.parse(input);
 		Element element = document.getDocumentElement();
 		
-		queue = new LinkedList();
-		
+		queue = new LinkedList();		
 		if(element != null){
 //			queue.add(element.getNodeName());	
 			queue.add(new MyNode(element.getNodeName(), element));
@@ -71,16 +71,9 @@ public class XmlNodesExport {
 				
 				if(childNodes.item(j).getNodeType()==Node.ELEMENT_NODE){
 					queue.add(new MyNode(nodeName + "." + childNodes.item(j).getNodeName(), (Element)childNodes.item(j)));
-//				}else if(childNodes.item(j).getNodeType()==Node.TEXT_NODE && childNodes.item(j).getNodeValue() != null){
 				}else if(childNodes.item(j).getNodeType()==Node.TEXT_NODE ){
-					result.add(nodeName);
-//					System.out.println("nodeName:" + nodeName + ", value=" + childNodes.item(j).getNodeValue());
-                    // DEBUG PRINTS
-					Node node = childNodes.item(j);
-					System.out.println("nodeName:" + node.getNodeName());
-                    System.out.println("nodeType:" + node.getNodeType());
-                    System.out.println("nodeValue:" + node.getNodeValue());
-                    System.out.println("getTextContent:" + node.getTextContent());
+					if(childNodes.getLength() == 1)  // eliminate non-leaf element 
+						result.add(nodeName);                    
 				}
 			}
 		}
